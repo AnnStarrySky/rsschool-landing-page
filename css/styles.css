@@ -303,3 +303,31 @@ h3 {
 .slider-dot-active {
   background: var(--color-border-inverse);
 }
+
+.about-title{
+  margin-bottom: var(--spacing-md);    
+}
+
+.about-gallery {
+  display: flex;
+  gap: 40px;
+}
+
+.about-col {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.about-img {
+  border-radius: 20px;
+  object-fit: cover;
+}
+
+.about-img-tall {
+  aspect-ratio: 660 / 590;
+}
+
+.about-img-short {
+  aspect-ratio: 660 / 430;
+}
