@@ -86,6 +86,7 @@ h3 {
 
 .accent {
   font-style: italic;
+  color: var(--color-accent);
 }
 
 .caption {
@@ -98,11 +99,17 @@ h3 {
   font-size: var(--fs-body);
   font-weight: 600;
   line-height: var(--lh-body);
+  color: var(--color-text-primary);
+}
+
+.btn {
+    padding: 20px 78px;
+    border-radius: 100px;
+    background-color: var(--color-bg-page);
 }
 
 .link {
   position: relative; 
-  color: var(--color-text-primary);
   transition: 0.4s;
   padding-bottom: 4px;
 }
@@ -150,6 +157,7 @@ h3 {
 
 .header {
   padding-top: var(--spacing-sm);
+  margin-bottom: var(--spacing-sm);
 }
 
 .header-inner {
@@ -185,8 +193,10 @@ h3 {
 }
 
 .menu-link {
+  max-width: fit-content;
   align-items: center;
   gap: 8px;
+  transition: 0.4s;
 }
 
 .burger-btn {
@@ -196,4 +206,33 @@ h3 {
 .header-right-inner {
   align-items: center;
   gap: 24px;
+}
+
+.hero-inner {
+  padding: var(--spacing-xl);
+  background-image: url('../img/hero.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: var(--spacing-md);
+  color: var(--color-bg-page);
+}
+
+.max-width-hero {
+    max-width: 530px;
+}
+
+.hero-menu-link svg{
+  opacity: 0;
+  width: 0;
+  transition: 0.4s;
+}
+
+.hero-menu-link:hover svg{
+  opacity: 1;
+  width: 20px;
 }
