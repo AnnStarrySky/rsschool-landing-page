@@ -98,7 +98,6 @@ h3 {
   font-size: var(--fs-body);
   font-weight: 600;
   line-height: var(--lh-body);
-  color: var(--color-text-primary);
 }
 
 .btn {
@@ -198,6 +197,10 @@ h3 {
   transition: 0.4s;
 }
 
+.menu-link svg{
+  align-self: flex-start;
+}
+
 .burger-btn {
   display: none;
 }
@@ -222,7 +225,11 @@ h3 {
 }
 
 .max-width-hero {
-    max-width: 530px;
+  max-width: 530px;
+}
+
+.hero-menu-link {
+  color: var(--color-text-primary);
 }
 
 .hero-menu-link svg{
@@ -375,4 +382,54 @@ h3 {
 
 .app-btn p {
   color: inherit;
+}
+
+.footer-inner {
+  padding: var(--spacing-xl);
+  background: var(--color-bg-container);
+  border-radius: 40px;
+  color: var(--color-text-inverse);
+}
+
+.footer-title {
+  margin-bottom: 40px;
+}
+
+.footer-inner {
+  gap: 100px;
+}
+
+.footer-social {
+  gap: 12px;
+}
+
+.footer-social-link {
+  width: 60px;
+  height: 60px;
+  border-radius: 100px;
+  border: 1px solid var(--color-border-primary);
+  align-items: center;
+  justify-content: center;
+  transition: 0.4s;
+}
+
+.footer-social-link:hover {
+  background: var(--color-bg-page);
+  color: var(--color-text-primary);
+}
+
+.footer-right {
+  flex-direction: column;
+  gap: 40px;
+  justify-content: center;
+}
+
+.footer-contacts {
+  flex-direction: column;
+  gap: 16px;
+}
+
+.footer-contact {
+  align-items: center;
+  gap: 4px;
 }
