@@ -454,6 +454,10 @@ h3 {
   gap: 4px;
 }
 
+.footer{
+    margin-bottom: 40px;
+}  
+
 /* catalog */
 
 .catalog-title {
@@ -521,4 +525,61 @@ h3 {
 
 .catalog-card-price{
   margin-top: auto;   
+}
+
+.burger-btn{
+  width: 44px;
+  height: 44px;
+  border: 1px solid var(--color-border-inverse);
+  border-radius: 50%;
+  transition: 0.4s;
+  position: relative;
+}
+
+.burger-btn-line{
+  position: absolute;  
+  width: 16px;
+  height: 1.5px;
+  background: currentColor;
+  border-radius: 10px;
+  transition: 0.4s;
+}
+
+.burger-btn-line:nth-child(1) {
+  transform: translate(-50%, -50%) translateY(-4px);
+}
+
+.burger-btn-line:nth-child(2) {
+  transform: translate(-50%, -50%) translateY(4px);
+}
+
+@media (max-width: 1024px){
+  .hero-inner {
+    padding: 100px 98px 100px 60px; 
+  }
+  .app-inner {
+    flex-direction: column;
+  }
+  .app-content{
+    padding: 0;
+  }
+  .footer-inner{
+    flex-direction: column;
+  }
+  .header-nav{
+    display: none;
+  }
+  .catalog-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .app-phones{
+    display: flex;
+    justify-content: center;
+  }
+  .burger-btn {
+    display: block;
+  }
+  .header-menu-link{
+    display: none;
+  }
 }
