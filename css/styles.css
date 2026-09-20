@@ -39,6 +39,7 @@ body {
   line-height: var(--lh-body);
   background-color: var(--color-bg-page);
   color: var(--color-text-primary);
+  transition: 0.4s;
 }
 
 :root {
@@ -183,11 +184,28 @@ h3 {
   border-radius: 50%;
   color: var(--color-text-primary);
   background: transparent;
-  transition: background 0.4s;
+  transition: 0.4s;
 }
 
-.theme-switch-icon-sun{
+[data-theme="light"] .theme-switch-icon-sun{
   background-color: var(--color-accent);
+}
+
+[data-theme="dark"] .theme-switch-icon-sun{
+  background-color: transparent;
+}
+
+[data-theme="dark"] .theme-switch-icon-moon{
+  background-color: var(--color-accent);
+}
+
+.theme-switch-icon-sun:hover{
+  background-color: var(--color-accent);
+}
+
+.theme-switch-icon-moon:hover{
+  background-color: var(--color-border-inverse);
+  color: var(--color-text-inverse);
 }
 
 .menu-link {
@@ -221,7 +239,7 @@ h3 {
   flex-direction: column;
   justify-content: center;
   gap: var(--spacing-md);
-  color: var(--color-bg-page);
+  color: #E1D4C9;
 }
 
 .max-width-hero {
@@ -255,6 +273,7 @@ h3 {
 .slider-slide__image {
   max-width: 480px;
   margin-bottom: 20px;
+  position: relative;
 }
 
 .slider-title {
@@ -282,6 +301,7 @@ h3 {
   transition: 0.4s;
   position: absolute;
   top: 50%;
+  transform: translateY(-50%);
 }
 
 .slider-btn:hover {
@@ -291,7 +311,7 @@ h3 {
 }
 
 .slider-btn-next {
-  right: 0;
+  right: 40px;
 }
 
 .slider-dots {
@@ -340,44 +360,44 @@ h3 {
 }
 
 .app {
-    margin: var(--spacing-xl) 0;
+  margin: var(--spacing-xl) 0;
 }
 
 .app-inner {
-    justify-content: space-between;
-    gap: 100px;
+  justify-content: space-between;
+  gap: 100px;
 }
 
 .app-content {
-    padding: 144px 0;
+  padding: 144px 0;
 }
 
 .app-title, .app-text {
-    margin-bottom: var(--spacing-md);
+  margin-bottom: var(--spacing-md);
 }
 
 .app-phones-img{
-    max-width: 630px;
+  max-width: 630px;
 }
 
 .app-buttons {
-    gap: 40px;
+  gap: 40px;
 }
 
 .app-btn{
-    width: 200px;
-    padding: 14px 20px;
-    border: 1px solid var(--color-border-inverse);
-    border-radius: 100px;
-    gap: 8px;
-    justify-content: left;
-    align-items: center;
-    transition: 0.4s;
+  width: 200px;
+  padding: 14px 20px;
+  border: 1px solid var(--color-border-inverse);
+  border-radius: 100px;
+  gap: 8px;
+  justify-content: left;
+  align-items: center;
+  transition: 0.4s;
 }
 
 .app-btn:hover {
-    color: var(--color-text-inverse);
-    background: var(--color-bg-container);
+  color: var(--color-text-inverse);
+  background: var(--color-bg-container);
 }
 
 .app-btn p {
