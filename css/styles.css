@@ -17,7 +17,7 @@ a {
 }
 
 img {
-  max-width: 100%;
+  width: 100%;
 }
 
 button {
@@ -271,9 +271,8 @@ h3 {
 }
 
 .slider-slide__image {
-  max-width: 480px;
   margin-bottom: 20px;
-  position: relative;
+  max-width: 480px;
 }
 
 .slider-title {
@@ -374,10 +373,6 @@ h3 {
 
 .app-title, .app-text {
   margin-bottom: var(--spacing-md);
-}
-
-.app-phones-img{
-  max-width: 630px;
 }
 
 .app-buttons {
@@ -581,5 +576,27 @@ h3 {
   }
   .header-menu-link{
     display: none;
+  }
+}
+
+@media (max-width: 550px){
+  .container{
+    padding: 0 16px;
+  }
+  .slider-btn{
+    display: none;
+  }
+  .hero-inner {
+    padding: 60px 16px; 
+  }
+  .footer-inner {
+    gap: 40px;
+    padding: 60px 16px;
+  }
+  .catalog-grid{
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .catalog-card{
+    margin: 0 20px;
   }
 }
