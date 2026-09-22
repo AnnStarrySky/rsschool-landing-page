@@ -494,6 +494,10 @@ h3 {
   justify-content: center;
 }
 
+.tab-inner img{
+  width: 16px;
+}
+
 .catalog-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -604,5 +608,8 @@ h3 {
   }
   .app-buttons{
     flex-direction: column;
+  }
+  .catalog-tabs{
+    gap: 8px;
   }
 }
