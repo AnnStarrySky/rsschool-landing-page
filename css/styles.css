@@ -577,6 +577,9 @@ h3 {
   .header-menu-link{
     display: none;
   }
+  .app-buttons{
+    gap: 20px;
+  }
 }
 
 @media (max-width: 550px){
@@ -598,5 +601,8 @@ h3 {
   }
   .catalog-card{
     margin: 0 20px;
+  }
+  .app-buttons{
+    flex-direction: column;
   }
 }
