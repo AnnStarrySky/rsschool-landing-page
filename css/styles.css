@@ -480,7 +480,7 @@ h3 {
   transition: 0.4s;
 }
 
-.catalog-tab:hover {
+.catalog-tab-active, .catalog-tab:hover {
   background: var(--color-bg-container);
   color: var(--color-text-inverse);
 }
