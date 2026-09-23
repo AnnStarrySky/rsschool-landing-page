@@ -83,24 +83,27 @@
                 <div class="catalog-tabs flex">
                     <button class="catalog-tab flex catalog-tab-active" type="button" data-category="coffee">
                         <span class="tab-inner flex">
-                            <img src="/img/catalog-tab/coffee.png" alt="coffee">
+                            <img src="img/catalog-tab/coffee.png" alt="coffee">
                         </span>
                         <span>Coffee</span>
                     </button>
                     <button class="catalog-tab flex" type="button" data-category="tea">
                         <span class="tab-inner flex">
-                            <img src="/img/catalog-tab/tea.png" alt="tea">
+                            <img src="img/catalog-tab/tea.png" alt="tea">
                         </span>
                         <span>Tea</span>
                     </button>
                     <button class="catalog-tab flex" type="button" data-category="dessert">
                         <span class="tab-inner flex">
-                            <img src="/img/catalog-tab/dessert.png" alt="dessert">
+                            <img src="img/catalog-tab/dessert.png" alt="dessert">
                         </span>
                         <span>Dessert</span>
                     </button>
                 </div>
                 <ul class="catalog-grid"></ul>
+                <div class="catalog-more-wrap">
+                    <button class="catalog-more-btn btn" type="button">Show more</button>
+                </div>
             </div>
         </section>
     </main>
@@ -178,8 +181,93 @@
             </div>
         </div>
     </footer>
+    <div class="modal flex">
+    <div class="modal-overlay"></div>
+    <div class="modal-window">
+        <div class="modal-content flex">
+            <div class="modal-img">
+                <img src="img/catalog/coffee/irish.png" alt="irish">
+            </div>
+            <div class="modal-info flex">
+                <div class="modal-descr">
+                    <h3 class="modal-title">Irish coffee</h3>
+                    <p>Fragrant black coffee with Jameson Irish whiskey and whipped milk</p>
+                </div>    
+                <div class="modal-option">
+                    <p class="modal-option-label">Size</p>
+                    <div class="flex modal-option-inner">
+                        <div class="flex modal-option-item">
+                            <div class="flex modal-option-round">
+                                <span>S</span>
+                            </div>
+                            <span class="modal-option-descr">200 ml</span>
+                        </div>
+                        <div class="flex modal-option-item">
+                            <div class="flex modal-option-round">
+                                <span>S</span>
+                            </div>
+                            <span class="modal-option-descr">200 ml</span>
+                        </div>
+                        <div class="flex modal-option-item">
+                            <div class="flex modal-option-round">
+                                <span>S</span>
+                            </div>
+                            <span class="modal-option-descr">200 ml</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-option">
+                    <p class="modal-option-label">Additives</p>
+                    <div class="flex modal-option-inner">
+                        <div class="flex modal-option-item">
+                            <div class="flex modal-option-round">
+                                <span>1</span>
+                            </div>
+                            <span class="modal-option-descr">Sugar</span>
+                        </div>
+                        <div class="flex modal-option-item">
+                            <div class="flex modal-option-round">
+                                <span>1</span>
+                            </div>
+                            <span class="modal-option-descr">Sugar</span>
+                        </div>
+                        <div class="flex modal-option-item">
+                            <div class="flex modal-option-round">
+                                <span>1</span>
+                            </div>
+                            <span class="modal-option-descr">Sugar</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-total flex">
+                    <h3>Total:</h3>
+                    <h3>$7.00</h3>
+                </div>
+                <div class="modal-discount-info caption flex">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g clip-path="url(#clip0_147811_7961)">
+                        <path d="M8 7.66663V11" stroke="#403F3D" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M8 5.00667L8.00667 4.99926" stroke="#403F3D" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M7.99967 14.6667C11.6816 14.6667 14.6663 11.6819 14.6663 8.00004C14.6663 4.31814 11.6816 1.33337 7.99967 1.33337C4.31778 1.33337 1.33301 4.31814 1.33301 8.00004C1.33301 11.6819 4.31778 14.6667 7.99967 14.6667Z" stroke="#403F3D" stroke-linecap="round" stroke-linejoin="round"/>
+                        </g>
+                        <defs>
+                        <clipPath id="clip0_147811_7961">
+                        <rect width="16" height="16" fill="white"/>
+                        </clipPath>
+                        </defs>
+                    </svg>
+                    <p>
+                        The cost is not final. Download our mobile app to see the final price and place your order. Earn loyalty points and enjoy your favorite coffee with up to 20% discount.
+                    </p>
+                </div>
+                <button class="modal-btn">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
     <script src="js/theme.js"></script>
     <script src="js/products.js"></script>
     <script src="js/catalog.js"></script>
+    <script src="js/modal.js"></script>
 </body>
 </html>
