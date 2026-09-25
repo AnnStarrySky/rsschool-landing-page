@@ -687,6 +687,16 @@ h3 {
   color: var(--color-text-inverse);
 }
 
+.modal-option-active{
+  background: var(--color-bg-container);
+  color: var(--color-text-inverse);
+}
+
+.modal-option-active .modal-option-round{
+  background: var(--color-bg-page);
+  color: var(--color-text-primary);
+}
+
 @media (max-width: 1024px){
   .hero-inner {
     padding: 100px 98px 100px 60px; 
@@ -730,7 +740,22 @@ h3 {
   .catalog-more-wrap.has-hidden-items {
     display: block;
   }
+  .modal-option-inner{
+    flex-wrap: wrap;
+  }
+  .modal-info{
+    width: 100%;
+  }
 }
+
+@media (max-width: 1024px){
+  .about-col:last-child{
+    display: none;
+  }
+  .about-img-short{
+   aspect-ratio: 1 / 1;
+  }
+}  
 
 @media (max-width: 550px){
   .container{
