@@ -158,6 +158,8 @@ h3 {
 .header {
   padding-top: var(--spacing-sm);
   margin-bottom: var(--spacing-sm);
+  z-index: 1000;
+  position: relative;
 }
 
 .header-inner {
@@ -556,6 +558,8 @@ h3 {
   background: currentColor;
   border-radius: 10px;
   transition: 0.4s;
+  top: 50%;
+  left: 50%;
 }
 
 .burger-btn-line:nth-child(1) {
@@ -564,6 +568,14 @@ h3 {
 
 .burger-btn-line:nth-child(2) {
   transform: translate(-50%, -50%) translateY(4px);
+}
+
+.burger-btn.active .burger-btn-line:nth-child(1) {
+  transform: translate(-50%, -50%) translateY(0) rotate(45deg);
+}
+
+.burger-btn.active .burger-btn-line:nth-child(2) {
+  transform: translate(-50%, -50%) translateY(0) rotate(-45deg);
 }
 
 .modal{
@@ -695,6 +707,45 @@ h3 {
 .modal-option-active .modal-option-round{
   background: var(--color-bg-page);
   color: var(--color-text-primary);
+}
+
+.burger-menu {
+  position: fixed;
+  z-index: 200;
+  inset: 0;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.4s;
+  background: var(--color-bg-page);
+  flex-direction: column;
+  gap: var(--spacing-xl);
+  align-items: center;
+}  
+
+.burger-menu-open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.nav-list-burger{
+  flex-direction: column;
+  gap: 60px;
+  align-items: center;
+}
+
+.nav-list-burger .link{
+  font-size: 32px;
+}
+
+.burger-menu-link{
+  font-size: 32px;
+}
+
+.burger-menu-link svg{
+  width: 40px;
+  height: 40px;
 }
 
 @media (max-width: 1024px){
