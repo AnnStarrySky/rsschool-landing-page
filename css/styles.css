@@ -30,6 +30,7 @@ button {
 
 html {
   scroll-behavior: smooth;
+  scrollbar-gutter: stable;
 }
 
 body {
@@ -95,7 +96,7 @@ h3 {
   line-height: var(--lh-caption);
 }
 
-.btn, .link, .app-link-text {
+.btn, .link, .app-link-text, .modal-btn {
   font-size: var(--fs-body);
   font-weight: 600;
   line-height: var(--lh-body);
@@ -157,6 +158,8 @@ h3 {
 .header {
   padding-top: var(--spacing-sm);
   margin-bottom: var(--spacing-sm);
+  z-index: 1000;
+  position: relative;
 }
 
 .header-inner {
@@ -261,6 +264,14 @@ h3 {
   width: 20px;
 }
 
+.slider-viewport{
+  overflow: hidden;
+}
+
+.slider-track{
+  transition: transform 0.5s;
+}
+
 .slider {
   margin: var(--spacing-xl) 0;
 }
@@ -268,6 +279,10 @@ h3 {
 .slider-inner{
   text-align: center;
   position: relative;
+}
+
+.slider-slide{
+  flex: 0 0 100%;
 }
 
 .slider-slide__image {
@@ -379,7 +394,8 @@ h3 {
   gap: 40px;
 }
 
-.app-btn{
+.app-btn, 
+.catalog-more-btn{
   width: 200px;
   padding: 14px 20px;
   border: 1px solid var(--color-border-inverse);
@@ -390,7 +406,8 @@ h3 {
   transition: 0.4s;
 }
 
-.app-btn:hover {
+.app-btn:hover,
+.catalog-more-btn:hover {
   color: var(--color-text-inverse);
   background: var(--color-bg-container);
 }
@@ -480,7 +497,7 @@ h3 {
   transition: 0.4s;
 }
 
-.catalog-tab:hover {
+.catalog-tab-active, .catalog-tab:hover {
   background: var(--color-bg-container);
   color: var(--color-text-inverse);
 }
@@ -494,17 +511,26 @@ h3 {
   justify-content: center;
 }
 
+.tab-inner img{
+  width: 16px;
+}
+
+.catalog{
+  margin-bottom: var(--spacing-xl);
+}
+
 .catalog-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 40px;
-  margin-bottom: var(--spacing-xl);
 }
 
 .catalog-card{
   border: 1px solid var(--color-border-primary);
   border-radius: 40px;
   flex-direction: column;
+  cursor: pointer;
+  user-select: none;
 }
 
 .catalog-card-img{
@@ -520,6 +546,12 @@ h3 {
 
 .catalog-card-price{
   margin-top: auto;   
+}
+
+.catalog-more-wrap{
+  margin-top: 50px;
+  text-align: center;
+  display: none;
 }
 
 .burger-btn{
@@ -538,6 +570,8 @@ h3 {
   background: currentColor;
   border-radius: 10px;
   transition: 0.4s;
+  top: 50%;
+  left: 50%;
 }
 
 .burger-btn-line:nth-child(1) {
@@ -546,6 +580,184 @@ h3 {
 
 .burger-btn-line:nth-child(2) {
   transform: translate(-50%, -50%) translateY(4px);
+}
+
+.burger-btn.active .burger-btn-line:nth-child(1) {
+  transform: translate(-50%, -50%) translateY(0) rotate(45deg);
+}
+
+.burger-btn.active .burger-btn-line:nth-child(2) {
+  transform: translate(-50%, -50%) translateY(0) rotate(-45deg);
+}
+
+.modal{
+  position: fixed;
+  z-index: 200;
+  inset: 0;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.4s;
+}
+
+.modal-open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.65);
+  cursor: pointer;
+}
+
+.modal-window {
+  width: 85%;
+  padding: 16px;
+  border-radius: 40px;
+  background: var(--color-bg-page);
+  z-index: 1;
+  max-width: 800px;
+}
+
+.modal-content{
+  gap: 20px;
+}
+
+.modal-info{
+  width: 60%;
+}
+
+.modal-img img{
+  border-radius: 40px;
+}
+
+.modal-info {
+  flex-direction: column;
+  gap: 20px;
+}
+
+.modal-title {
+  margin-bottom: 12px;
+}
+
+.modal-option-inner {
+  gap: 8px;
+}
+
+.modal-option-label {
+  margin-bottom: 8px;
+  font-size: var(--fs-body);
+  font-weight: 600;
+  line-height: var(--lh-body);
+}
+
+.modal-option-item {
+  padding: 8px 16px 8px 8px;
+  border: 1px solid var(--color-border-primary);
+  border-radius: 100px;
+  gap: 8px;
+  align-items: center;
+  justify-content: center;
+  transition: 0.4s;
+  cursor: pointer;
+}
+
+.modal-option-descr{
+  transition: 0.4s;
+}
+
+.modal-option-item:hover {
+  background: var(--color-bg-container);
+}
+.modal-option-item:hover .modal-option-round {
+  background: var(--color-bg-page);
+}
+.modal-option-item:hover .modal-option-descr{
+  color: var(--color-text-inverse);
+}
+
+.modal-option-round {
+  background: var(--color-border-primary);
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  transition: 0.4s;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-total{
+  justify-content: space-between;
+}
+
+.modal-discount-info {
+  gap: 12px;
+  padding: 12px 0;
+  border-top: 1px solid var(--color-border-primary);
+}
+
+.modal-btn{
+  border: 1px solid var(--color-border-primary);
+  padding: 10px 0;
+  border-radius: 100px;
+  transition: 0.4s;
+}
+
+.modal-btn:hover{
+  background: var(--color-bg-container);
+  color: var(--color-text-inverse);
+}
+
+.modal-option-active{
+  background: var(--color-bg-container);
+  color: var(--color-text-inverse);
+}
+
+.modal-option-active .modal-option-round{
+  background: var(--color-bg-page);
+  color: var(--color-text-primary);
+}
+
+.burger-menu {
+  position: fixed;
+  z-index: 200;
+  inset: 0;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.4s;
+  background: var(--color-bg-page);
+  flex-direction: column;
+  gap: var(--spacing-xl);
+  align-items: center;
+}  
+
+.burger-menu-open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.nav-list-burger{
+  flex-direction: column;
+  gap: 60px;
+  align-items: center;
+}
+
+.nav-list-burger .link{
+  font-size: 32px;
+}
+
+.burger-menu-link{
+  font-size: 32px;
+}
+
+.burger-menu-link svg{
+  width: 40px;
+  height: 40px;
 }
 
 @media (max-width: 1024px){
@@ -577,7 +789,36 @@ h3 {
   .header-menu-link{
     display: none;
   }
+  .app-buttons{
+    gap: 20px;
+  }
+  .catalog-grid .catalog-card:nth-child(n+5) {
+    display: none;
+  }
+  
+  .catalog-grid.catalog-grid-expanded .catalog-card:nth-child(n+5) {
+    display: grid;
+  }
+
+  .catalog-more-wrap.has-hidden-items {
+    display: block;
+  }
+  .modal-option-inner{
+    flex-wrap: wrap;
+  }
+  .modal-info{
+    width: 100%;
+  }
 }
+
+@media (max-width: 1024px){
+  .about-col:last-child{
+    display: none;
+  }
+  .about-img-short{
+   aspect-ratio: 1 / 1;
+  }
+}  
 
 @media (max-width: 550px){
   .container{
@@ -598,5 +839,11 @@ h3 {
   }
   .catalog-card{
     margin: 0 20px;
+  }
+  .app-buttons{
+    flex-direction: column;
+  }
+  .catalog-tabs{
+    gap: 8px;
   }
 }
