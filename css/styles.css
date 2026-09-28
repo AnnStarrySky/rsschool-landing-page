@@ -264,6 +264,14 @@ h3 {
   width: 20px;
 }
 
+.slider-viewport{
+  overflow: hidden;
+}
+
+.slider-track{
+  transition: transform 0.5s;
+}
+
 .slider {
   margin: var(--spacing-xl) 0;
 }
@@ -271,6 +279,10 @@ h3 {
 .slider-inner{
   text-align: center;
   position: relative;
+}
+
+.slider-slide{
+  flex: 0 0 100%;
 }
 
 .slider-slide__image {
